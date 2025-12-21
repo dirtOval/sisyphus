@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0d0xxgv3fr7k"]
+
+[ext_resource type="PackedScene" uid="uid://bxtltd7mbx2we" path="res://boulder.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://klj08frugrv2" path="res://sisyphus.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cw3pnic7tolra" path="res://ground_chunk.tscn" id="3_h2yge"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="boulder" parent="." instance=ExtResource("1_ig7tw")]
+position = Vector2(152, 459)
+
+[node name="Camera2D" type="Camera2D" parent="boulder"]
+position = Vector2(-1, 1)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="sisyphus" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(49, 505)
+floor_max_angle = 1.5271631
+safe_margin = 0.7
+
+[node name="ground_chunk" parent="." instance=ExtResource("3_h2yge")]
+grade = 60

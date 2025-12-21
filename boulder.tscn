@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxtltd7mbx2we"]
+
+[ext_resource type="Script" uid="uid://0wnjkbf2se77" path="res://boulder.gd" id="1_n2vxl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_woy6c"]
+radius = 62.51
+
+[node name="boulder" type="RigidBody2D"]
+collision_layer = 4
+script = ExtResource("1_n2vxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_woy6c")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+scale = Vector2(6.3600006, 6.3600006)
+color = Color(0.23567984, 0.20055917, 0.13344443, 1)
+polygon = PackedVector2Array(0, -10, 5, -9, 9, -5, 10, -1, 10, 3, 7, 7, 3, 10, -3, 10, -7, 7, -9, 5, -10, 2, -10, -3, -6, -9)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://klj08frugrv2"]
+
+[ext_resource type="Texture2D" uid="uid://lwpdsdr13th5" path="res://art/sisyphus.png" id="1_g1h3x"]
+[ext_resource type="Script" uid="uid://7n1ovr7caypd" path="res://sisyphus.gd" id="1_ravae"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2dau"]
+radius = 35.0
+height = 126.0
+
+[node name="sisyphus" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+safe_margin = 0.001
+script = ExtResource("1_ravae")
+push_force = 15.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_i2dau")
+
+[node name="Sisyphus" type="Sprite2D" parent="."]
+position = Vector2(3, -12)
+texture = ExtResource("1_g1h3x")
