@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func generate_chunk(start: Vector2 = Vector2(0, 600)) -> void:
+func generate_chunk(start: Vector2 = Vector2(0, 600)) -> Vector2:
 	var last = start
 	for i in 33:
 		var elevation = last.y - abs(_noise.get_noise_1d(i) * grade)
@@ -30,3 +30,4 @@ func generate_chunk(start: Vector2 = Vector2(0, 600)) -> void:
 		collide_segment.shape.a = last
 		collide_segment.shape.b = next
 		last = next
+	return last
