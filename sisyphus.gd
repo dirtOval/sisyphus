@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 100.0
+@export var SPEED = 100.0
 const AIR_SPEED = 0.0
 #const JUMP_VELOCITY = -400.0
 @export var push_force = 10.0
@@ -23,12 +23,13 @@ func _physics_process(delta: float) -> void:
 		#velocity.x = direction * SPEED
 	#else:
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
-	if is_on_floor():
-		velocity.x = SPEED
-	else:
-		velocity.x = AIR_SPEED
+	#if is_on_floor():
+	velocity.x = SPEED
+	#else:
+		#velocity.x = AIR_SPEED
 	move_and_slide()
 	# after calling move_and_slide()
+	
 	for i in get_slide_collision_count():
 		var c = get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:

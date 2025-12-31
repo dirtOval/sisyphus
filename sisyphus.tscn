@@ -12,9 +12,10 @@ collision_layer = 2
 collision_mask = 5
 slide_on_ceiling = false
 floor_stop_on_slope = false
+floor_max_angle = 0.9599311
 safe_margin = 0.001
 script = ExtResource("1_ravae")
-push_force = 12.0
+push_force = 15.43
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
